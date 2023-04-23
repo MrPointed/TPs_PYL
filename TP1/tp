@@ -1,0 +1,11 @@
+A partir de un modelo matemático correspondiente a la verificación de CUIL. Se pide:
+
+1. Realizar un diagrama de flujo
+
+2. Realizar un programa en "C" que permita:
+
+2.a Ingresar un número de CUIL (solo numeros, sin separacion por guiones o puntos)
+
+2.b Verificar que el utimmo dígito sea el correcto.
+
+3. Realizar el programa en el entorno code blocks y subir a este espacio el código.
