@@ -60,6 +60,9 @@ func main() {
 
 			amnt, _ := strconv.Atoi(amount) //I've added this to convert string to integer
 			items = data.Add(items, name, amnt)
+
+			data.UpdateFile(file, items)
+
 			fmt.Println(items)
 
 		case "remove":
