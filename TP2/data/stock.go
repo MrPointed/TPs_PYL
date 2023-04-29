@@ -36,6 +36,16 @@ func Add(items []Item, name string, amount int) []Item {
 	return append(items, newItem)
 }
 
+func remove(id int, items []Item) []Item {
+
+	for i, item := range items {
+		if item.ID == id {
+			return append(items[:i], items[i+1:]...)
+		}
+	}
+	return items
+}
+
 func UpdateFile(f *os.File, items []Item) {
 	//convert to json-encoded bytes
 	bytes, err := json.Marshal(items)
