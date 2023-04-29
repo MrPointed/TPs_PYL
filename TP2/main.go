@@ -59,14 +59,27 @@ func main() {
 			amount = strings.TrimSpace(amount)
 
 			amnt, _ := strconv.Atoi(amount) //I've added this to convert string to integer
+
+			if amnt <= 0 {
+				fmt.Println("Please enter a correct value")
+				return
+			}
 			items = data.Add(items, name, amnt)
 
 			data.UpdateFile(file, items)
 
-			fmt.Println(items)
+			fmt.Println("New item added")
 
 		case "remove":
-			fmt.Println("removing")
+			reader := bufio.NewReader(os.Stdin)
+
+			fmt.Println("ID:")
+			id, _ := reader.ReadString('\n')
+			id = strings.TrimSpace(id)
+			idd, _ := strconv.Atoi(id) //I've added this to convert string to integer
+
+			items = data.Remove(idd, items)
+			data.UpdateFile(file, items)
 		}
 	}
 

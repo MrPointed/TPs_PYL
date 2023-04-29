@@ -36,10 +36,11 @@ func Add(items []Item, name string, amount int) []Item {
 	return append(items, newItem)
 }
 
-func remove(id int, items []Item) []Item {
+func Remove(id int, items []Item) []Item {
 
 	for i, item := range items {
 		if item.ID == id {
+			fmt.Printf("Item %d removed\n", item.ID)
 			return append(items[:i], items[i+1:]...)
 		}
 	}
